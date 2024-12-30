@@ -8,8 +8,39 @@
 <body>
 
     <h1>Conversor de Moéda</h1>
-    <input type="number" name="moeda" id="moeda" placeholder="Valor em reais">
+    <input type="number" name="moeda" id="moedaReais" placeholder="Valor em reais"  onblur="formatarValor()">
     <button id="btn" onclick="converter()">Converter</button>
+    <!--<script>// MINHA TENTATIVA
+        function formatarValor() {
+            let reais = document.getElementById('moedaReais');
+            let valorReal = Number(reais.value);
 
+            // Se o valor não for válido (ex: campo vazio), não faz nada
+            if (!isNaN(valorReal) && reais.value !== '') {
+                reais.value = valorReal.toFixed(2); // Define o valor com 2 casas decimais
+            }
+        }
+        function converter(){
+            let reais = document.getElementById('moedaReais')
+            let valorReal = Number(reais.value)//Criei uma variável que vai armazenar o valor inserdo no input. Aqui estou pegando o valor desse input através do .value e convertendo esse valor em número através do Number.
+            let dolar = 6.19//Variável responsável pela taxa de câmbio atual
+            let conversao = (valorReal/dolar)//Criei variável para armazenar a lógica que vai fazer a conversão.
+            let convertido = conversao.toFixed(2)//Criei variável para armazenar a minha conversão formatada para 2 casas decimais, através do toFixed(2).
+            alert(`R$${valorReal.toFixed(2)} hoje são equivalentes a $${convertido}.`)
+        }
+        conveter()
+    </script>-->
+    <script>//FORMA SIMPLIFICADA
+        let reais = document.getElementById('moedaReais')
+ 
+        function converter(){
+        let conversao = reais.value/ 6.19
+            if(reais.value == ''){
+                alert('Insira um valor válido!')
+            
+            }
+        alert(`O valor convertido em dólar é $${conversao.toFixed(2)}`)
+        }
+    </script>
 </body>
 </html>
